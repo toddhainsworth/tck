@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tck</title>
+  <title>Tck | For when your shit is broken</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= stylesheet_link_tag    "bootstrap", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="contain">
+    <div id="header">
+      <h2>Tck</h2>
+      <b>When your shit's broken</b>
+    </div>
+    <div id="content">
+      <%= yield %>
+    </div>
 
-<%= yield %>
+    <div id="footer">
+      <p>Created by <%= link_to "Todd", "http://facebook.com/toddhainsworth" %></p>
+    </div>
+  </div>
 
 </body>
 </html>
