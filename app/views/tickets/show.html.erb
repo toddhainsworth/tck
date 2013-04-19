@@ -1,0 +1,7 @@
+<div id="ticket_show">
+  <div id="ticket_title"><%= @ticket.title %></div> by <%= @ticket.author %>
+   <hr>
+   <%= @ticket.description %>
+   <hr>
+   Posted <%= time_ago_in_words @ticket.created_at %> ago
+</div>
