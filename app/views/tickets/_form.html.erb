@@ -1,0 +1,19 @@
+<%= form_for(@ticket) do |f| %>
+  <table>
+    <tr>
+      <td><%= f.label :title %></td>
+      <td><%= f.text_field :title %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :description %></td>
+      <td><%= f.text_area :description, :rows => '7' %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :author %></td>
+      <td><%= f.text_field :author %></td>
+    </tr>
+    <tr>
+      <td><%= f.submit 'Create Ticket', :class => 'btn btn-primary' %>
+    </tr>
+  </table>
+<% end %>

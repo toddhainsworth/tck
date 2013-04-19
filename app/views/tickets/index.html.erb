@@ -7,10 +7,11 @@
   <th>Actions</th>
   <% @tickets.each do |t| %>
     <tr>
-      <td><center><%= t.title %></center></td>
+      <td><center><%= link_to t.title, ticket_path(t.id) %></center></td>
       <td><center><%= t.description %></center></td>
       <td><center><%= if t.resolved == 1 then "Yes" else "No" end %></center></td>
-      <td><center><%= link_to "Show", ticket_path(t.id) %> | <%= link_to "Edit", edit_ticket_path(t.id) %> |  <%= link_to "Delete", ticket_path(t.id), :method => :delete, :confirm => "Really delete this ticket?" %></center></td>
+      <td><center><%= link_to "Edit", edit_ticket_path(t.id) %> |  <%= link_to "Delete", ticket_path(t.id), :method => :delete, :confirm => "Really delete this ticket?" %></center></td>
     </tr>
   <% end %>
 </table>
+<hr>

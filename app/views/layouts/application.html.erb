@@ -16,7 +16,7 @@
     <div id="content">
       <%= yield %>
     </div>
-
+    <div id="bottom_nav"><%= link_to "Home", root_path %> | <%= link_to "Create Ticket", new_ticket_path %></div>
     <div id="footer">
       <p>Created by <%= link_to "Todd", "http://facebook.com/toddhainsworth" %></p>
     </div>
