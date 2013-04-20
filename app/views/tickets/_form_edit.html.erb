@@ -1,0 +1,19 @@
+<%= form_for(:ticket, url: { action: :update, id: @ticket.id }, :method => :put ) do |f|%>
+  <table>
+    <tr>
+      <td><%= f.label :title %></td>
+      <td><%= f.text_field :title %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :description %></td>
+      <td><%= f.text_field :description %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :author %></td>
+      <td><%= f.text_field :author %></td>
+    </tr>
+    <tr>
+      <td><%= f.submit 'Edit Ticket', :class => 'btn btn-primary' %></td>
+    </tr>
+  </table>
+<% end %>

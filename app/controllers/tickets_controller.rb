@@ -24,6 +24,23 @@ class TicketsController < ApplicationController
       redirect_to root_path
   end
 
+  def edit
+    @ticket = Ticket.find(params[:id])
+
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_path
+  end
+
+  def update
+    @ticket = Ticket.find(params[:id])
+
+    if @ticket.update_attributes(params[:ticket]) 
+      redirect_to ticket_path(@ticket.id)
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     ticket = Ticket.find(params[:id])
 
