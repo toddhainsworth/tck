@@ -1,17 +1,21 @@
 <div id="title">Tickets</div>
 <hr>
-<table width="100%">
-  <th>Title</th>
-  <th>Description</th>
-  <th>Resolved?</th>
-  <th>Actions</th>
-  <% @tickets.each do |t| %>
-    <tr>
-      <td><center><%= link_to t.title, ticket_path(t.id) %></center></td>
-      <td><center><%= truncate(t.description, :length => 50) %></center></td>
-      <td><center><%= if t.resolved == 1 then "Yes" else "No" end %></center></td>
-      <td><center><%= link_to "Resolve", resv_ticket_path(t.id) %> | <%= link_to "Edit", edit_ticket_path(t.id) %> |  <%= link_to "Delete", ticket_path(t.id), :method => :delete, :confirm => "Really delete this ticket?" %></center></td>
-    </tr>
-  <% end %>
-</table>
+<% unless @tickets.empty? %>
+  <table width="100%">
+    <th>Title</th>
+    <th>Description</th>
+    <th>Resolved?</th>
+    <th>Actions</th>
+    <% @tickets.each do |t| %>
+      <tr>
+        <td><center><%= link_to t.title, ticket_path(t.id) %></center></td>
+        <td><center><%= truncate(t.description, :length => 50) %></center></td>
+        <td><center><%= if t.resolved == 1 then "Yes" else "No" end %></center></td>
+        <td><center><%= link_to "Resolve", resv_ticket_path(t.id) %> | <%= link_to "Edit", edit_ticket_path(t.id) %> |  <%= link_to "Delete", ticket_path(t.id), :method => :delete, :confirm => "Really delete this ticket?" %></center></td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <p><strong>No tickets to show!</strong></p>
+<% end %>
 <hr>
