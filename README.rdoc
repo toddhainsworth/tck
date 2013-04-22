@@ -3,3 +3,7 @@ tck
 Todd's Cool K? is basically a ticket system for my home use
 I tend have people needing it assistance when I am not home,
 so this is a way to book in for help.
+
+Project is 'done' in that I mean it does what I need it to at
+home, it will probably mature as I need more features for the
+system.
