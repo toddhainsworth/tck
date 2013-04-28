@@ -3,5 +3,5 @@
    <hr>
    <%= @ticket.description %>
    <hr>
-   <b>Posted</b> <%= time_ago_in_words @ticket.created_at %> ago || <b>Resolved: </b> <%= if @ticket.resolved == 1 then "Yes" else "No" end %>
+   <b>Posted</b> <%= time_ago_in_words @ticket.created_at %> ago | <b>Resolved: </b> <%= if @ticket.resolved == 1 then "Yes" else "No" end %>, <%= time_ago_in_words @ticket.updated_at %> ago
 </div>
