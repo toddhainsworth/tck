@@ -11,7 +11,7 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new(params[:ticket])
 
     if @ticket.save
-      redirect_to ticket_path @ticket.id
+        redirect_to ticket_path @ticket.id
     else
       redirect_to new_ticket_path
     end
