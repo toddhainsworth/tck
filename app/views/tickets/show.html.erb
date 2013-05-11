@@ -1,7 +1,14 @@
 <div id="ticket_show">
-    <div id="ticket_title"><%= @ticket.title %></div><br/> by <%= @ticket.author %>
+    <div id="ticket_title"><%= @ticket.title %></div> by <%= @ticket.author %>
     <hr>
     <%= @ticket.description %>
     <hr>
-    <b>Posted</b> <%= time_ago_in_words @ticket.created_at %> ago | <b>Resolved: </b> <%= if @ticket.resolved == 1 then "Yes" else "No" end %>, <%= time_ago_in_words @ticket.updated_at %> ago
+    <b>Posted</b> <%= time_ago_in_words @ticket.created_at %> ago | 
+    <b>Resolved:</b> <%= resolved_at @ticket %>
+
+   <!-- <% if @ticket.resolved == 1 %> 
+		<%= time_ago_in_words @ticket.created_at %> ago
+    <% else %> 
+    	No 
+    <% end %>--> 
 </div>
