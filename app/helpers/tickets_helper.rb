@@ -2,7 +2,7 @@ module TicketsHelper
 
 	def resolved_at(ticket)
 		if ticket.resolved == 1
-			time_ago_in_words(ticket.created_at) +
+			time_ago_in_words(ticket.updated_at) +
 			" ago"
 		else
 			"No"
