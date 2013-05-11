@@ -11,7 +11,7 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new(params[:ticket])
 
     if @ticket.save
-        redirect_to ticket_path @ticket.id
+      redirect_to ticket_path @ticket.id
     else
       redirect_to new_ticket_path
     end
@@ -19,7 +19,6 @@ class TicketsController < ApplicationController
 
   def show
     @ticket = Ticket.find(params[:id])
-
 
     rescue ActiveRecord::RecordNotFound
       redirect_to root_path

@@ -5,10 +5,4 @@
     <hr>
     <b>Posted</b> <%= time_ago_in_words @ticket.created_at %> ago | 
     <b>Resolved:</b> <%= resolved_at @ticket %>
-
-   <!-- <% if @ticket.resolved == 1 %> 
-		<%= time_ago_in_words @ticket.created_at %> ago
-    <% else %> 
-    	No 
-    <% end %>--> 
 </div>

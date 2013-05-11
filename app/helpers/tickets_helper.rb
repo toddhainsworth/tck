@@ -8,4 +8,12 @@ module TicketsHelper
 			"No"
 		end
 	end
+
+	def resolved?(ticket)
+		if ticket.resolved == 1
+			"Yes"
+		else
+			"No"
+		end
+	end
 end

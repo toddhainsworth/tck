@@ -14,4 +14,16 @@ describe TicketsHelper do
 			resolved_at(@ticket).should eq "less than a minute ago" 
 		end
 	end
+
+	describe ".resolved?" do
+		it "displays yes when resolved is true" do
+			@ticket = Ticket.new(resolved: 1)
+			resolved?(@ticket).should eq "Yes"
+		end
+
+		it "displays no when resolved is false" do
+			@ticket = Ticket.new(resolved: 0)
+			resolved?(@ticket).should eq "No"
+		end
+	end
 end
