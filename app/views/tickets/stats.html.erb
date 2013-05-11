@@ -1,0 +1,22 @@
+<h2>Ticket Stats</h2>
+
+<table align="center" class="table">
+	<tr>
+		<th>ID</th>
+		<th>Ticket Title</th>
+		<th>Ticket Description</th>
+		<th>Creation Time</th>
+		<th>Last Edited</th>
+		<th>Status</th>
+	</tr>
+	<% @tickets.each do |t| %>
+		<tr>
+			<td><%= t.id %></td>	
+			<td><%= t.title %></td>
+			<td><%= truncate t.description, length: 50 %></td>
+			<td><%= time_ago_in_words t.created_at %> ago</td>
+			<td><%= time_ago_in_words t.updated_at %> ago</td>
+			<td><%= if resolved? t == "Yes" then "Resolved" else "Not Resolved" end %></td>
+		</tr>
+	<% end %>
+</table>

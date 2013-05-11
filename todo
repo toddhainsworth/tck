@@ -5,3 +5,4 @@ Fix visual elements mainly on show ticket page
 Add User Authentication using the Devise Gem
 Re-design menu system
 Re-design resolve link on ticket show page
+Add a list for resolved and unresolved tickets

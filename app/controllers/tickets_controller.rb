@@ -54,4 +54,8 @@ class TicketsController < ApplicationController
     ticket.update_attributes(:resolved => 1)
     redirect_to root_path
   end
+
+  def stats
+    @tickets = Ticket.all
+  end
 end

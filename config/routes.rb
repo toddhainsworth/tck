@@ -1,6 +1,7 @@
 Tck::Application.routes.draw do
   resources :tickets
   root :to => "tickets#index"
+  match 'stats' => 'tickets#stats', :as => :tickets_stats
   match 'tickets/:id/resolve' => 'tickets#resolve', :as => :resv_ticket
   # The priority is based upon order of creation:
   # first created -> highest priority.
