@@ -2,6 +2,7 @@ require "spec_helper"
 
 describe TicketsHelper do
 	include TicketsHelper
+	
 	describe ".resolved_at" do
 		it "displays no when resolved is false" do
 			@ticket = Ticket.new(resolved: 0)
