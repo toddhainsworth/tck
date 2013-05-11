@@ -5,4 +5,5 @@
     <hr>
     <b>Posted</b> <%= time_ago_in_words @ticket.created_at %> ago | 
     <b>Resolved:</b> <%= resolved_at @ticket %>
+    <%= if resolved?(@ticket) == "No" then link_to("(Resolve)", resv_ticket_path(@ticket.id)) end %>
 </div>
