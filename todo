@@ -1,0 +1,7 @@
+-- Low --
+Fix visual elements mainly on show ticket page
+
+-- Medium --
+Add User Authentication using the Devise Gem
+Re-design menu system
+Re-design resolve link on ticket show page
