@@ -1,8 +1,9 @@
 -- Low --
 Fix visual elements mainly on show ticket page
+Clean up 'stats' method in controller
 
 -- Medium --
 Add User Authentication using the Devise Gem
 Re-design menu system
 Re-design resolve link on ticket show page
-Add a list for resolved and unresolved tickets
+Add a list for resolved and unresolved tickets [done]
