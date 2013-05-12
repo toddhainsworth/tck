@@ -6,7 +6,7 @@
 <table align="center" class="table">
 	<tr>
 		<th>ID</th>
-		<th>Ticket Title</th>
+		<th width="105px">Ticket Title</th>
 		<th>Ticket Description</th>
 		<th>Creation Time</th>
 		<th>Last Edited</th>
@@ -14,7 +14,7 @@
 	</tr>
 	<% @tickets.each do |t| %>
 		<tr>
-			<td><%= t.id %></td>	
+			<td><%= link_to t.id, ticket_path(t.id) %></td>	
 			<td><%= t.title %></td>
 			<td><%= truncate t.description, length: 50 %></td>
 			<td><%= time_ago_in_words t.created_at %> ago</td>
@@ -29,14 +29,14 @@
 <table align="center" class="table">
 	<tr>
 		<th>ID</th>
-		<th>Ticket Title</th>
+		<th width="100px">Ticket Title</th>
 		<th>Ticket Description</th>
 		<th>Creation Time</th>
 		<th>Last Edited</th>
 	</tr>
 	<% @resolved.each do |r| %>
 		<tr>
-			<td><%= r.id %></td>	
+			<td><%= link_to r.id, ticket_path(r.id) %></td>	
 			<td><%= r.title %></td>
 			<td><%= truncate r.description, length: 50 %></td>
 			<td><%= time_ago_in_words r.created_at %> ago</td>
@@ -57,7 +57,7 @@
 	</tr>
 	<% @unresolved.each do |u| %>
 		<tr>
-			<td><%= u.id %></td>	
+			<td><%= link_to u.id, ticket_path(u.id) %></td>	
 			<td><%= u.title %></td>
 			<td><%= truncate u.description, length: 50 %></td>
 			<td><%= time_ago_in_words u.created_at %> ago</td>
