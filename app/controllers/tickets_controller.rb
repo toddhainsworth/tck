@@ -57,5 +57,7 @@ class TicketsController < ApplicationController
 
   def stats
     @tickets = Ticket.all
+    @resolved = Ticket.where(:resolved => 1)
+    @unresolved = Ticket.where(:resolved => 0)
   end
 end

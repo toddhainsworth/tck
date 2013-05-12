@@ -1,5 +1,8 @@
 <h2>Ticket Stats</h2>
 
+<hr>
+
+<h4>All Tickets</h4>
 <table align="center" class="table">
 	<tr>
 		<th>ID</th>
@@ -16,7 +19,49 @@
 			<td><%= truncate t.description, length: 50 %></td>
 			<td><%= time_ago_in_words t.created_at %> ago</td>
 			<td><%= time_ago_in_words t.updated_at %> ago</td>
-			<td><%= if resolved? t == "Yes" then "Resolved" else "Not Resolved" end %></td>
+			<td><%= resolved? t %></td>
+		</tr>
+	<% end %>
+</table>
+
+<h4>Resolved Tickets</h4>
+
+<table align="center" class="table">
+	<tr>
+		<th>ID</th>
+		<th>Ticket Title</th>
+		<th>Ticket Description</th>
+		<th>Creation Time</th>
+		<th>Last Edited</th>
+	</tr>
+	<% @resolved.each do |r| %>
+		<tr>
+			<td><%= r.id %></td>	
+			<td><%= r.title %></td>
+			<td><%= truncate r.description, length: 50 %></td>
+			<td><%= time_ago_in_words r.created_at %> ago</td>
+			<td><%= time_ago_in_words r.updated_at %> ago</td>
+		</tr>
+	<% end %>
+</table>
+
+<h4>Un-Resolved Tickets</h4>
+
+<table align="center" class="table">
+	<tr>
+		<th>ID</th>
+		<th>Ticket Title</th>
+		<th>Ticket Description</th>
+		<th>Creation Time</th>
+		<th>Last Edited</th>
+	</tr>
+	<% @unresolved.each do |u| %>
+		<tr>
+			<td><%= u.id %></td>	
+			<td><%= u.title %></td>
+			<td><%= truncate u.description, length: 50 %></td>
+			<td><%= time_ago_in_words u.created_at %> ago</td>
+			<td><%= time_ago_in_words u.updated_at %> ago</td>
 		</tr>
 	<% end %>
 </table>

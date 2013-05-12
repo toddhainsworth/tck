@@ -11,15 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130418060444) do
+ActiveRecord::Schema.define(:version => 20130512012513) do
 
   create_table "tickets", :force => true do |t|
     t.string   "title"
     t.string   "description"
     t.string   "author"
-    t.decimal  "resolved",    :precision => 10, :scale => 0
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
+    t.decimal  "resolved",    :precision => 10, :scale => 0, :default => 0
+    t.datetime "created_at",                                                :null => false
+    t.datetime "updated_at",                                                :null => false
   end
 
 end
