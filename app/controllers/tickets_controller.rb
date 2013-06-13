@@ -20,8 +20,8 @@ class TicketsController < ApplicationController
   def show
     @ticket = Ticket.find(params[:id])
 
-    rescue ActiveRecord::RecordNotFound
-      redirect_to root_path
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_path
   end
 
   def edit
