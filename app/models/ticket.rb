@@ -1,3 +1,3 @@
 class Ticket < ActiveRecord::Base
-  attr_accessible :title, :description, :author, :resolved
+	attr_accessible :title, :description, :author, :resolved
 end

@@ -51,13 +51,13 @@ class TicketsController < ApplicationController
   def resolve
     ticket = Ticket.find(params[:id])
 
-    ticket.update_attributes(:resolved => 1)
+    ticket.update_attributes(resolved: 1)
     redirect_to root_path
   end
 
   def stats
     @tickets = Ticket.all
-    @resolved = Ticket.where(:resolved => 1)
-    @unresolved = Ticket.where(:resolved => 0)
+    @resolved = Ticket.where(resolved: 1)
+    @unresolved = Ticket.where(resolved: 0)
   end
 end
