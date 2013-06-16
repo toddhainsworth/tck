@@ -16,3 +16,7 @@
 
 # Sublime Text Stuff
 *sublime*
+
+db/data.yml
+config/database.yml.mysql
+
