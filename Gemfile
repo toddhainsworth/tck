@@ -24,7 +24,8 @@ group :assets do
 end
 
 group :test do
-	gem "rspec-rails"
+  gem "rspec-rails"
+  gem 'rake'
 end
 
 
