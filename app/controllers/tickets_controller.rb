@@ -13,15 +13,17 @@ class TicketsController < ApplicationController
     if @ticket.save
       redirect_to ticket_path @ticket.id
     else
+      flash[:notice] = "An error occured!"
       redirect_to new_ticket_path
     end
   end
 
   def show
-    @ticket = Ticket.find(params[:id])
-
-  rescue ActiveRecord::RecordNotFound
-    redirect_to root_path
+    begin
+      @ticket = Ticket.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      redirect_to root_path
+    end
   end
 
   def edit
@@ -37,6 +39,7 @@ class TicketsController < ApplicationController
     if @ticket.update_attributes(params[:ticket]) 
       redirect_to ticket_path(@ticket.id)
     else
+      flash[:notice] = "An error occured!"
       render 'edit'
     end
   end
